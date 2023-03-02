@@ -5,7 +5,11 @@ import aws_cdk as cdk
 
 from s3_deploy.s3_deploy_stack import S3DeployStack
 
-
+from aws_cdk import (
+    aws_s3 as s3,
+    aws_s3_deployment as s3deploy,
+    aws_servicecatalog as sc,
+)
 app = cdk.App()
 S3DeployStack(app, "S3DeployStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
