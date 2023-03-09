@@ -10,7 +10,7 @@ from aws_cdk import (
     aws_s3_deployment as s3deploy,
     aws_servicecatalog as sc,
 )
-app = cdk.App()
+app = cdk.App() #entry point for the cdk app
 S3DeployStack(app, "S3DeployStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
