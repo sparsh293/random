@@ -1,0 +1,12 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - npm install -g aws-cdk
+  build:
+    commands:
+      - cdk synth --no-staging > my-template.yaml
+      - aws s3 cp my-template.yaml s3://my-bucket/
+artifacts:
+  files:
+    - my-template.yaml
