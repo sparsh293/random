@@ -18,7 +18,7 @@ class S3BucketProduct(sc.ProductStack):  #class for defining a s3 bucket Product
                self,                        #refersto the current instance of the class
               "MyBucket",                   #name of bucket
               removal_policy=RemovalPolicy.DESTROY,  # Destroy the bucket when the stack is deleted
-              versioned=True,  # Enable versioning
+              versioned=False,  # Enable versioning
               server_access_logs_bucket=s3.Bucket(
                      self, "MyBucketAccessLogs"
               ),  # Enable server access logging
@@ -56,12 +56,6 @@ class S3DeployStack(Stack):
         )]
         )
 
-        portfolio = Portfolio(
-            self, "MyPortfolio",
-            display_name="My Portfolio",
-            provider_name="Sparsh",
-            description="This is a sample portfolio"
-        )  #creating a service catalog portfolio using cdk
-        portfolio.add_product(product_from_stack) #adding the cf product to the portfolio
+
 
         
